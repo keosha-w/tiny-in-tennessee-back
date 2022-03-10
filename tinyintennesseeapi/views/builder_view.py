@@ -1,3 +1,4 @@
+from operator import truediv
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
@@ -9,5 +10,5 @@ class BuilderView(ViewSet):
         """Get a list of builders"""
         builders = Builder.objects.all()
         # user = TitUser.objects.get(user=request.auth.user)
-        serializer = BuilderSerializer(builders)
+        serializer = BuilderSerializer(builders, many=True)
         return Response(serializer.data)

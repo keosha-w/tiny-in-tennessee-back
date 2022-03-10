@@ -3,7 +3,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-
+from tinyintennesseeapi.models import TitUser
 
 from django.contrib.auth import authenticate
 
@@ -49,7 +49,11 @@ def register_user(request):
         first_name=request.data['first_name'],
         last_name=request.data['last_name']
     )
+    
+    tit_user = TitUser.objects.create(
+        user_id=new_user.id
+    )
 
-    token = Token.objects.create(user=new_user)
+    token = Token.objects.create(user=tit_user.user)
     data = {'token': token.key}
     return Response(data)
