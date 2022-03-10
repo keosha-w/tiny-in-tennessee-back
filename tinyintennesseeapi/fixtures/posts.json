@@ -1,0 +1,13 @@
+[
+    {
+        "model": "tinyintennesseeapi.post",
+        "pk": 1,
+        "fields": {
+            "title": "Take a look at my tiny house!",
+            "content" : "https://www.google.com/imgres?imgurl=https%3A%2F%2Flivinginatiny.com%2Fwp-content%2Fuploads%2F2021%2F02%2FTiny-house-with-amazing-interior-design_3.jpeg&imgrefurl=https%3A%2F%2Flivinginatiny.com%2Ftiny-house-with-amazing-interior-design%2F&tbnid=sPiO_0Xo2UKjrM&vet=12ahUKEwjGzbO_47n2AhWJEVMKHc4DAIQQMygIegUIARDVAg..i&docid=E_qDaKDOyc_4kM&w=810&h=1080&q=tiny%20house&ved=2ahUKEwjGzbO_47n2AhWJEVMKHc4DAIQQMygIegUIARDVAg",
+            "date_posted": "2020-08-28T14:51:39.989Z",
+            "is_approved": true,
+            "user": 1
+        }
+    }
+]

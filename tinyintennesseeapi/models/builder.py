@@ -6,6 +6,6 @@ class Builder(models.Model):
     website = models.CharField(max_length=100)
     contact_info = models.CharField(max_length=100)
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE 
+        "TitUser", on_delete=models.CASCADE 
     )
     

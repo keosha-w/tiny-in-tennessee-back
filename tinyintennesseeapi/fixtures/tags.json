@@ -1,0 +1,30 @@
+[
+    {
+        "model": "tinyintennesseeapi.tag",
+        "pk": 1,
+        "fields": {
+            "tag": "Photos"
+        }
+    },
+    {
+        "model": "tinyintennesseeapi.tag",
+        "pk": 2,
+        "fields": {
+            "tag": "Recommendations"
+        }
+    },
+    {
+        "model": "tinyintennesseeapi.tag",
+        "pk": 3,
+        "fields": {
+            "tag": "Replies"
+        }
+    },
+    {
+        "model": "tinyintennesseeapi.tag",
+        "pk": 4,
+        "fields": {
+            "tag": "Tips & Tricks"
+        }
+    }
+]

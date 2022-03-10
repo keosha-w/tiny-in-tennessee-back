@@ -1,0 +1,12 @@
+[
+    {
+        "model": "tinyintennesseeapi.builder",
+        "pk": 1,
+        "fields": {
+            "title": "Incredible Tiny Homes",
+            "website": "https://www.incredibletinyhomes.com/",
+            "contact_info": "(423) 438-0111",
+            "user": 1
+        }
+    }
+]

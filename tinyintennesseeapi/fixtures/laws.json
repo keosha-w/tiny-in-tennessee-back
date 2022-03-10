@@ -1,0 +1,14 @@
+[
+    {
+        "model": "tinyintennesseeapi.law",
+        "pk": 1,
+        "fields": {
+            "name": "Davidson",
+            "zoning": "https://www.nashville.gov/departments/codes/land-use-and-zoning-information/understanding-zoning-code",
+            "building": "",
+            "notes": "Tiny Houses added to a property with an existing structure are considered DADUs Detached Accessory Dwelling Units. In short, you can put a tiny house on any properties that are zoned R80-R6, RM2-RM20-A, RM40-RM100A, OR20-OR40A and ORI and ORI-A; AND in an historic overlay are eligible.",
+            "county_id": 1,
+            "user": 1
+        }
+    }
+]

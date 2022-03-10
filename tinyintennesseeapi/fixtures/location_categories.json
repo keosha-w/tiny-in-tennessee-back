@@ -1,0 +1,16 @@
+[
+    {
+        "model": "tinyintennesseeapi.locationcategory",
+        "pk": 1,
+        "fields": {
+            "name": "Community"
+        }
+    },
+    {
+        "model": "tinyintennesseeapi.locationcategory",
+        "pk": 2,
+        "fields": {
+            "name": "Property"
+        }
+    }
+]

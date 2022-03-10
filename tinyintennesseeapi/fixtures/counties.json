@@ -1,0 +1,44 @@
+[
+    {
+        "model": "tinyintennesseeapi.county",
+        "pk": 1,
+        "fields": {
+            "name": "Davidson"
+        }
+    },
+    {
+        "model": "tinyintennesseeapi.county",
+        "pk": 2,
+        "fields": {
+            "name": "Sumner"
+        }
+    },
+    {
+        "model": "tinyintennesseeapi.county",
+        "pk": 3,
+        "fields": {
+            "name": "Wilson"
+        }
+    },
+    {
+        "model": "tinyintennesseeapi.county",
+        "pk": 4,
+        "fields": {
+            "name": "Williamson"
+        }
+    },
+    {
+        "model": "tinyintennesseeapi.county",
+        "pk": 5,
+        "fields": {
+            "name": "Rutherford"
+        }
+    },
+    {
+        "model": "tinyintennesseeapi.county",
+        "pk": 6,
+        "fields": {
+            "name": "Cocke"
+        }
+    }
+]

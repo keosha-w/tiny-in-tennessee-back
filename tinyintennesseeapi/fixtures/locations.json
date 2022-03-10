@@ -1,0 +1,17 @@
+[
+    {
+        "model": "tinyintennesseeapi.location",
+        "pk": 1,
+        "fields": {
+            "title": "Incredible Properties", 
+            "electrical": true, 
+            "address": "850 Industrial Road, Newport, TN 37821", 
+            "county_id": 6,
+            "water": true,
+            "septic": true,
+            "monthlyPrice": 300,
+            "location_category_id": 1,
+            "user": 1
+        }
+    }
+]
