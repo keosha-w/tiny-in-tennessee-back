@@ -4,5 +4,5 @@ from tinyintennesseeapi.models import Builder
 class BuilderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Builder
-        fields = ('id', 'title', 'website', 'contact_info', 'user_id')
-        depth = 1
+        fields = ('id', 'title', 'website', 'contact_info', 'user')
+        depth = 2

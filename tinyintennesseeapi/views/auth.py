@@ -51,7 +51,7 @@ def register_user(request):
     )
     
     tit_user = TitUser.objects.create(
-        user_id=new_user.id
+        user=new_user.id
     )
 
     token = Token.objects.create(user=tit_user.user)
