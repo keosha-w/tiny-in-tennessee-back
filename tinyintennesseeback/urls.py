@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
-from tinyintennesseeapi.views import BuilderView
+from tinyintennesseeapi.views import BuilderView, LocationView
 from tinyintennesseeapi.views.auth import register_user, login_user
+
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'builders', BuilderView, 'builder')
+router.register(r'locations', LocationView, 'location')
 
 urlpatterns = [
     path('register', register_user),

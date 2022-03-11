@@ -1,1 +1,2 @@
 from .builder_serializer import BuilderSerializer
+from .location_serializer import LocationSerializer
