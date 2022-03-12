@@ -6,3 +6,8 @@ class BuilderSerializer(serializers.ModelSerializer):
         model = Builder
         fields = ('id', 'title', 'website', 'contact_info', 'user')
         depth = 2
+
+class CreateBuilderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Builder
+        fields = ['id', 'title', 'website', 'contact_info']
