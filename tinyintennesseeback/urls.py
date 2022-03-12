@@ -19,11 +19,15 @@ from django.conf.urls import include
 from rest_framework import routers
 from tinyintennesseeapi.views import BuilderView, LocationView
 from tinyintennesseeapi.views.auth import register_user, login_user
+from tinyintennesseeapi.views.law_view import LawView
+from tinyintennesseeapi.views.post_view import PostView
 
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'builders', BuilderView, 'builder')
 router.register(r'locations', LocationView, 'location')
+router.register(r'laws', LawView, 'law')
+router.register(r'posts', PostView, 'post')
 
 urlpatterns = [
     path('register', register_user),
