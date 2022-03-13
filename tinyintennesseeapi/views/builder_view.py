@@ -9,6 +9,13 @@ from django.contrib.auth.models import User
 
 
 class BuilderView(ViewSet):
+    
+    def retrieve(self, request, pk):
+        """Handle GET requests for single Builder"""
+        builder = Builder.objects.get(pk=pk)
+        serializer = BuilderSerializer(builder)
+        return Response(serializer.data)
+    
     def list(self, request):
         """Get a list of builders"""
         builders = Builder.objects.all()
