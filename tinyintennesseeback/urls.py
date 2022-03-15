@@ -19,7 +19,9 @@ from django.conf.urls import include
 from rest_framework import routers
 from tinyintennesseeapi.views import BuilderView, LocationView
 from tinyintennesseeapi.views.auth import register_user, login_user
+from tinyintennesseeapi.views.county_view import CountyView
 from tinyintennesseeapi.views.law_view import LawView
+from tinyintennesseeapi.views.location_category_view import LocationCategoryView
 from tinyintennesseeapi.views.post_view import PostView
 
 
@@ -28,6 +30,9 @@ router.register(r'builders', BuilderView, 'builder')
 router.register(r'locations', LocationView, 'location')
 router.register(r'laws', LawView, 'law')
 router.register(r'posts', PostView, 'post')
+router.register(r'counties', CountyView, 'county')
+router.register(r'locationCategories', LocationCategoryView, 'locationCategory')
+
 
 urlpatterns = [
     path('register', register_user),

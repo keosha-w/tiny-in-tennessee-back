@@ -6,3 +6,9 @@ class LocationSerializer(serializers.ModelSerializer):
         model = Location
         fields = ('id', 'title', 'electrical', 'address', 'county', 'water', 'septic', 'monthlyPrice', 'location_category')
         depth = 2
+        
+    
+class CreateLocationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Location
+        fields = ['id', 'title', 'electrical', 'address', 'county', 'water', 'septic', 'monthlyPrice', 'location_category']
