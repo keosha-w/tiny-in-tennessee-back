@@ -10,7 +10,7 @@ from tinyintennesseeapi.serializers.location_serializer import LocationSerialize
 class LocationView(ViewSet):
     
     def retrieve(self, request, pk):
-        """Handle GET requests for single Builder"""
+        """Handle GET requests for single Location"""
         location = Location.objects.get(pk=pk)
         serializer = LocationSerializer(location)
         return Response(serializer.data)
@@ -22,22 +22,6 @@ class LocationView(ViewSet):
         return Response(serializer.data)
 
     def create(self, request):
-        # user = TitUser.objects.get(user=request.data['user'])
-        # location_category = LocationCategory.objects.get(pk=request.data['location_category'])
-        # county = County.objects.get(pk=request.data['county'])
-        # location = Location.objects.create(
-        #     title=request.data['title'],
-        #     electrical=request.data['electrical'],
-        #     address=request.data['address'],
-        #     water=request.data['water'],
-        #     septic=request.data['septic'],
-        #     monthlyPrice=request.data['monthlyPrice'],
-        #     user=user,
-        #     location_category=location_category,
-        #     county=county
-        # )
-        # serializer = LocationSerializer(location)
-        # return Response(serializer.data, status=status.HTTP_201_CREATED)
         
         user = TitUser.objects.get(user=request.auth.user)
         try:
@@ -48,3 +32,20 @@ class LocationView(ViewSet):
         except ValidationError as ex:
             return Response({'message':ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
         
+    def update(self, request, pk):
+        try:
+            location = Location.objects.get(pk=pk)
+            location.title = request.data['title']
+            location.electrical = request.data['electrical']
+            location.address = request.data['address']
+            location.county_id = request.data['county_id']
+            location.water = request.data['water']
+            location.septic = request.data['septic']
+            location.monthlyPrice = request.data['monthlyPrice']
+            location.location_category_id = request.data['location_category']
+            location.save()
+            return Response(None, status=status.HTTP_204_NO_CONTENT)
+        except ValidationError as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
+        except Location.DoesNotExist as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)       

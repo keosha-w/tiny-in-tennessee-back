@@ -9,6 +9,13 @@ from tinyintennesseeapi.models.tituser import TitUser
 from tinyintennesseeapi.serializers.post_serializer import PostSerializer, CreatePostSerializer
 
 class PostView(ViewSet):
+    
+    def retrieve(self, request, pk):
+        """Handle GET requests for single Builder"""
+        post = Post.objects.get(pk=pk)
+        serializer = PostSerializer(post)
+        return Response(serializer.data)
+    
     def list(self, request):
         """Get a list of posts"""
         posts = Post.objects.all()
