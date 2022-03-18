@@ -44,6 +44,7 @@ class PostView(ViewSet):
     def update(self, request, pk):
         try:
             post = Post.objects.get(pk=pk)
+            post.tags.set(request.data['tags'])
             post.title = request.data['title']
             post.content = request.data['content']
             post.save()
