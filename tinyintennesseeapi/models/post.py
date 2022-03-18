@@ -12,3 +12,11 @@ class Post(models.Model):
     tags = models.ManyToManyField(
         "Tag", through='PostTag', related_name='tags'
     )
+    
+    @property
+    def addtags(self):
+        return self.__addtags
+    
+    @addtags.setter
+    def addtags(self, value):
+        self.__addtags = value

@@ -23,6 +23,8 @@ from tinyintennesseeapi.views.county_view import CountyView
 from tinyintennesseeapi.views.law_view import LawView
 from tinyintennesseeapi.views.location_category_view import LocationCategoryView
 from tinyintennesseeapi.views.post_view import PostView
+from tinyintennesseeapi.views.tag_view import TagView
+from tinyintennesseeapi.views.user_view import UserView
 
 
 router = routers.DefaultRouter(trailing_slash=False)
@@ -32,6 +34,8 @@ router.register(r'laws', LawView, 'law')
 router.register(r'posts', PostView, 'post')
 router.register(r'counties', CountyView, 'county')
 router.register(r'locationCategories', LocationCategoryView, 'locationCategory')
+router.register(r'users', UserView, 'user')
+router.register(r'tags', TagView, 'tag')
 
 
 urlpatterns = [

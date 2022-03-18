@@ -28,8 +28,10 @@ def login_user(request):
         token = Token.objects.get(user=authenticated_user)
         data = {
             'valid': True,
-            'token': token.key
-        }
+            'token': token.key,
+            'is_staff': authenticated_user.is_staff,
+            'user_id': authenticated_user.id
+        } # sending this data to the front end so that we can set it on local storage. 
         return Response(data)
     else:
         # Bad login details were provided. So we can't log the user in.
@@ -47,13 +49,16 @@ def register_user(request):
         username=request.data['username'],
         password=request.data['password'],
         first_name=request.data['first_name'],
-        last_name=request.data['last_name']
+        last_name=request.data['last_name'],
+        is_staff=request.data['is_staff']
     )
     
     tit_user = TitUser.objects.create(
-        user=new_user.id
+        user=new_user
     )
 
     token = Token.objects.create(user=tit_user.user)
-    data = {'token': token.key}
+    data = {'token': token.key,
+            'is_staff': new_user.is_staff,
+            'user_id': new_user.id}
     return Response(data)

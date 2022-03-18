@@ -49,3 +49,9 @@ class LocationView(ViewSet):
             return Response({'message': ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
         except Location.DoesNotExist as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)       
+        
+    def destroy(self, request, pk):
+        """Delete a location"""
+        location = Location.objects.get(pk=pk)
+        location.delete()
+        return Response({}, status=status.HTTP_204_NO_CONTENT)

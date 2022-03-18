@@ -1,3 +1,4 @@
 from .builder_serializer import BuilderSerializer, CreateBuilderSerializer
 from .location_serializer import LocationSerializer
 from .post_serializer import PostSerializer, CreatePostSerializer
+from .tag_serializer import TagSerializer
