@@ -8,4 +8,4 @@ class Builder(models.Model):
     user = models.ForeignKey(
         "TitUser", on_delete=models.CASCADE 
     )
-    
+    is_approved = models.BooleanField(default=False)

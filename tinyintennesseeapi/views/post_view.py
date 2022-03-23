@@ -23,6 +23,9 @@ class PostView(ViewSet):
     def list(self, request):
         """Get a list of posts"""
         posts = Post.objects.all()
+        approved = request.query_params.get('approved', None)
+        if approved is not None:
+            posts = posts.filter(is_approved=approved)
         serializer = PostSerializer(posts, many=True)
         return Response(serializer.data)
 
@@ -67,3 +70,15 @@ class PostView(ViewSet):
         tag = Tag.objects.get(pk=request.data['tag'])
         post.postTags.add(tag)
         return Response({'message': 'Gamer added'}, status=status.HTTP_201_CREATED)
+    
+    @action(methods=['put'], detail=True)
+    def approve_post(self, request, pk):
+        try:
+            post = Post.objects.get(pk=pk)
+            post.is_approved = request.data['is_approved']
+            post.save()
+            return Response(None, status=status.HTTP_204_NO_CONTENT)
+        except ValidationError as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
+        except Post.DoesNotExist as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
