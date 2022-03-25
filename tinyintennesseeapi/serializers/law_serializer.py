@@ -6,3 +6,8 @@ class LawSerializer(serializers.ModelSerializer):
         model = Law
         fields = ('id', 'zoning', 'building', 'notes', 'user', 'county')
         depth = 2
+        
+class CreateLawSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Law
+        fields = ['id', 'zoning', 'building', 'notes', 'county']
